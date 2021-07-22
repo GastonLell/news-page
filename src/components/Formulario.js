@@ -2,8 +2,7 @@ import React from "react";
 import styles from './Formulario.module.css';
 import useSelect from '../hooks/useSelect';
 
-const Formulario = () => {
-    /* https://newsapi.org/v2/top-headlines?country=mx&category=${categoria}&apiKey=5e533e331e2a4d6980c4c92d8a876f76 */
+const Formulario = ({setCategory}) => {
     const OPTIONS = [
       {value: 'general', label: 'General'},
       {value: 'business', label: 'Negocios'},
@@ -17,11 +16,17 @@ const Formulario = () => {
 
   const [categoria, SelectNews] = useSelect('general', OPTIONS  )
 
+
+  const searchNews = (e) => {
+    e.preventDefault();
+    setCategory(categoria);
+  }
+
   return (
     <div className={`${styles.buscador} row`}>
       <h2 className={styles.heading}>Encuentra noticias por categorías</h2>
       <div className="col-sm-12 col-md-8 m-auto">
-        <form>
+        <form onSubmit={searchNews}>
           <SelectNews/>
           <button className={`${styles.btn_block} btn btn-outline-primary m-auto `}>Buscar</button>
         </form>
