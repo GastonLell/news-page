@@ -1,6 +1,8 @@
 import React from "react";
-const NewItem = ({ title, urlToImage, url, description, source }) => {
-  
+import PropTypes from 'prop-types';
+
+const NewItem = ({ title, urlToImage, description  }) => {
+
   const imagen = urlToImage ? (
     <img
       src={urlToImage}
@@ -22,5 +24,11 @@ const NewItem = ({ title, urlToImage, url, description, source }) => {
     </>
   );
 };
+
+NewItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  urlToImage: PropTypes.string,
+  description: PropTypes.string,
+}
 
 export default NewItem;

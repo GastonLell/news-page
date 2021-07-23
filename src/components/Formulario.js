@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import styles from './Formulario.module.css';
 import useSelect from '../hooks/useSelect';
 
@@ -34,5 +35,9 @@ const Formulario = ({setCategory}) => {
     </div>
   );
 };
+
+Formulario.propTypes = {
+  setCategory: PropTypes.func.isRequired
+}
 
 export default Formulario;

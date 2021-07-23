@@ -19,7 +19,10 @@ function App() {
     setNews(response.data.articles)
   };
 
-  useEffect(() => getNews() , [category]);
+  useEffect(() =>{ 
+    getNews() 
+    //eslint-disable-next-line
+  }, [category]);
 
   return (
     <div className="container-fluid">

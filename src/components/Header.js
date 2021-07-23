@@ -1,10 +1,11 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const Header = ({ title }) => {
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="container-fluid">
+        <a className="navbar-brand" href="#!">
             {title}
         </a>
       </div>
@@ -12,4 +13,7 @@ const Header = ({ title }) => {
   );
 };
 
+Header.propTypes = {
+  title: PropTypes.string.isRequired
+}
 export default Header;
